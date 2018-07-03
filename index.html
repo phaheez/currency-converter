@@ -2,9 +2,28 @@
 <html>
 
 <head>
+	<title>Currency Converter</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="theme-color" content="#303F9F">
+	<meta name="description" content="A Progressive Web Application for currency converter, google udacity web specialist track. Written by .NET Developer, Fasasi Faiz">
+	<meta name="theme-color" content="#E91E63">
+
+	<!-- Manifest file -->
+	<link rel="manifest" href="manifest.json">
+
+	<!-- Favicons and Touch Icons -->
+	<link rel="icon" type="image/png" sizes="16x16" href="./img/icon16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./img/icon32.png">
+	<link rel="icon" type="image/png" sizes="48x48" href="./img/icon48.png">
+	<link rel="icon" type="image/png" sizes="128x128" href="./img/icon128.png">
+	<link rel="icon" type="image/png" sizes="256x256" href="./img/icon256.png">
+
+	<!-- Add to home screen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-title" content="currencyConverter">
+	<link rel="apple-touch-icon" sizes="152x152" href="./img/icon152.png">
 
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,10 +31,6 @@
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="css/app.css">
-
-	<!-- Manifest file -->
-	<link rel="manifest" href="manifest.json">
-	<title>Currency Converter</title>
 </head>
 
 <body>
@@ -28,9 +43,10 @@
 	<div class="container">
 		<div class="section">
 			<div class="row notification-row hide">
-					<div class="card-panel indigo lighten-5">
-							<i class="material-icons left">info</i><h6 class="notification-text"></h6>
-					</div>
+				<div class="card-panel indigo lighten-5">
+					<i class="material-icons left">info</i>
+					<h6 class="notification-text"></h6>
+				</div>
 			</div>
 			<div class="row show-card">
 				<div class="col s12 m12">
