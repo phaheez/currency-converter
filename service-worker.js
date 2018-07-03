@@ -6,7 +6,6 @@ var filesToCache = [
   'manifest.json',
   'css/app.css',
   'css/materialize.min.css',
-  'js/app.js',
   'js/jquery-3.2.1.min.js',
   'js/materialize.min.js',
   'js/app.js',
