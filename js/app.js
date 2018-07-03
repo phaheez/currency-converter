@@ -189,8 +189,11 @@
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
             .register('/currency-converter/service-worker.js', { scope: '/currency-converter/' })
-            .then(function () {
-                console.log('Service Worker Registered');
+            .then(function (reg) {
+                console.log('Service Worker Registered', + reg.scope);
+            })
+            .catch(function(error) {
+                console.log('Registration failed with ' + error);
             });
     }
 })();
