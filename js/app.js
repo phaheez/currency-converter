@@ -188,7 +188,7 @@
      **********************/
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
-            .register('./../service-worker.js')
+            .register('/currency-converter/service-worker.js', { scope: '/currency-converter/' })
             .then(function () {
                 console.log('Service Worker Registered');
             });
