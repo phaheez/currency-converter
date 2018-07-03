@@ -2,16 +2,16 @@ var cacheName = 'currencyConverter-v1';
 var apiCacheName = 'currencyConverter-api-v1';
 
 var filesToCache = [
-  '/',
-  'manifest.json',
-  'css/app.css',
-  'css/materialize.min.css',
-  'js/jquery-3.2.1.min.js',
-  'js/materialize.min.js',
-  'js/app.js',
-  'fonts/roboto/Roboto-Regular.woff',
-  'fonts/roboto/Roboto-Regular.woff2',
-  'fonts/roboto/Roboto-Bold.woff',
+  '/currency-converter/',
+  '/currency-converter/manifest.json',
+  '/currency-converter/css/app.css',
+  '/currency-converter/css/materialize.min.css',
+  '/currency-converter/js/jquery-3.2.1.min.js',
+  '/currency-converter/js/materialize.min.js',
+  '/currency-converter/js/app.js',
+  '/currency-converter/fonts/roboto/Roboto-Regular.woff',
+  '/currency-converter/fonts/roboto/Roboto-Regular.woff2',
+  '/currency-converter/fonts/roboto/Roboto-Bold.woff',
   'https://fonts.googleapis.com/icon?family=Material+Icons'
 ];
 
