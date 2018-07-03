@@ -190,7 +190,7 @@
         navigator.serviceWorker
             .register('/currency-converter/service-worker.js', { scope: '/currency-converter/' })
             .then(function (reg) {
-                console.log('Service Worker Registered', + reg.scope);
+                console.log('Service Worker Registered');
             })
             .catch(function(error) {
                 console.log('Registration failed with ' + error);
