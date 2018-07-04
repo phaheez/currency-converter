@@ -29,7 +29,7 @@
     });
 
     var isCurrencyAlreadyInCache = (url) => {
-        caches.match(url).then(function (response) {
+        caches.match(url).then((response) => {
             if (response) {
                 response.json().then(function updateFromCache(json) {
                     let values = json.results;
@@ -160,16 +160,16 @@
         });
 
         var request = indexedDB.open('currencyConverterDB', 1);
-        request.onerror = function () {
+        request.onerror = () => {
             alert('IndexedDB Not Allowed!')
         };
-        request.onupgradeneeded = function (e) {
+        request.onupgradeneeded = (e) => {
             var db = e.target.result;
             var objectStore = db.createObjectStore("currency", {
                 keyPath: "id"
             });
 
-            objectStore.transaction.oncomplete = function(event) {
+            objectStore.transaction.oncomplete = (event) => {
                 var tx = db.transaction('currency', 'readwrite');
                 var currencyStore = tx.objectStore('currency');
                 for (var data of dataArray) {
@@ -189,11 +189,7 @@
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
             .register('/currency-converter/service-worker.js')
-            .then(function (reg) {
-                console.log('Service Worker Registered');
-            })
-            .catch(function(error) {
-                console.log('Registration failed with ' + error);
-            });
+            .then(reg => console.log('Service Worker Registered at scope: ' + reg.scope))
+            .catch(error => console.log('Registration failed with ' + error));
     }
 })();
