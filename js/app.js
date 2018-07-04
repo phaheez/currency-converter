@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var app = {
+    let app = {
         apiURL: 'https://free.currencyconverterapi.com/api/v5/currencies',
         convertApi: 'https://free.currencyconverterapi.com/api/v5/convert?q='
     };
@@ -32,19 +32,19 @@
         caches.match(url).then(function (response) {
             if (response) {
                 response.json().then(function updateFromCache(json) {
-                    var values = json.results;
+                    let values = json.results;
 
-                    var dataArray = [];
+                    let dataArray = [];
 
                     Object.keys(values).sort().forEach((key) => {
-                        var obj = {};
+                        let obj = {};
 
                         let id = key;
                         let name = values[key]['currencyName'];
-                        var sym = values[key]['currencySymbol'];
-                        var symbol = sym == null ? id : sym;
+                        let sym = values[key]['currencySymbol'];
+                        let symbol = sym == null ? id : sym;
 
-                        var res = `${id} | ${name} (${symbol})`;
+                        let res = `${id} | ${name} (${symbol})`;
 
                         obj['id'] = id;
                         obj['currency'] = res;
@@ -63,22 +63,22 @@
         fetch(url)
             .then(response => response.json())
             .then((data) => {
-                var values = data.results;
+                let values = data.results;
 
-                var dataArray = [];
+                let dataArray = [];
 
                 Object.keys(values).sort().forEach((key) => {
-                    var obj = {};
+                    let obj = {};
 
                     let id = key;
                     let name = values[key]['currencyName'];
-                    var sym = values[key]['currencySymbol'];
-                    var symbol = sym == null ? id : sym;
+                    let sym = values[key]['currencySymbol'];
+                    let symbol = sym == null ? id : sym;
 
-                    var res = `${id} | ${name} (${symbol})`;
+                    let resu = `${id} | ${name} (${symbol})`;
 
                     obj['id'] = id;
-                    obj['currency'] = res;
+                    obj['currency'] = resu;
 
                     dataArray.push(obj);
                 });
@@ -92,7 +92,7 @@
 
     //update select control with currency
     var updateSelectControl = (data) => {
-        for (var res of data) {
+        for (let res of data) {
             $('#curr_from').append($('<option></option>').val(res.id).html(res.currency));
             $('#curr_to').append($('<option></option>').val(res.id).html(res.currency));
         }
@@ -188,7 +188,7 @@
      **********************/
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
-            .register('/currency-converter/service-worker.js', { scope: '/currency-converter/' })
+            .register('/currency-converter/service-worker.js')
             .then(function (reg) {
                 console.log('Service Worker Registered');
             })
